@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 
-function Question({ question, totalquestion, currentQuestion, setAnswer }) {
+function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const timer = useRef(null);
+  const progressBar = useRef(null);
 
   function gotoNextQuestion() {
     if (timer.current) {
@@ -30,18 +31,18 @@ function Question({ question, totalquestion, currentQuestion, setAnswer }) {
       <div className="question-count">
         <b>{currentQuestion}</b>
         of
-        <b>{totalquestion}</b>
+        <b>{totalQuestions}</b>
       </div>
       <div className="main">
         <div className="title">
           <span>Question</span>
-          <p>{question.title}</p>
+          <p>{question.title}</p>  
         </div>
-        <div className="option">
-          {question.option.map((option, index) => {
+        <div className="options">
+          {question.options.map((option, index) => {
             return (
               <div
-                className={index == selectedOption ? "option active" : "option"}
+                className={index === selectedOption ? "option active" : "option"}
                 key={index}
                 onclick={() => setSelectedOption(index)}
               >

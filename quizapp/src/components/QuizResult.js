@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function QuizResult({result, retry}) {
   return (
     <div className='result-screen'>
@@ -12,3 +13,4 @@ function QuizResult({result, retry}) {
 }
 
 export default QuizResult
+ 
