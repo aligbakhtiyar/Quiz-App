@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.quiz-screen .question .progress-bar{
+  width: 0px;
+  height: 5px;
+}
+
+.quiz-screen .question .progress-bar .active{
+  animation: progress 10s liner forwards;
+}
+
+@keyframes progress{
+  0%{
+    width: 0px;
+    background: #555;
+  }
+  79%{
+    width: 79px;
+    background: #555;
+  }
+  80%{
+    width: 80px;
+    background: orangered;
+  }
+  100%{
+    width: 100px;
+    background: orangered;
+  }
+}
