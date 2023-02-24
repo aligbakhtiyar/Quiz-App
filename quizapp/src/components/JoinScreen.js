@@ -10,7 +10,7 @@ function JoinScreen({start}) {
         similique dignissimos consectetur deleniti, saepe ab deserunt at nemo
         ipsam est ex.
       </p>
-      <button onClick={start}>Start</button>
+      <button type="button" class="btn btn-primary" onClick={start}>Start</button>
     </div>
   );
 }

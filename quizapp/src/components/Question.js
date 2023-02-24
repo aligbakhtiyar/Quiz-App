@@ -21,23 +21,14 @@ function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
     setTimeout(() => {
       progressBar.current.classList.add("active");
     }, 0);
-    timer.current = setTimeout(gotoNextQuestion, 10 * 1000); // 10 sec
+    timer.current = setTimeout(gotoNextQuestion, 1 * 1000); // 10 sec
     return gotoNextQuestion;
   }, [question]);
 
   return (
     <div className="question">
-      <div className="progress">
-        <div
-          className="progress-bar progress-bar-striped bg-danger"
-          
-          style={{width:90}}
-          
-          ref={progressBar}>
-        </div>
-      </div>
-      
-      <div className="question-count">
+      <div className="progress-bar" ref={progressBar}></div>
+       <div className="question-count">
         <b>{currentQuestion}</b>
         of
         <b>{totalQuestions}</b>
@@ -64,7 +55,7 @@ function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
         </div>
       </div>
       <div className="control">
-        <button onClick={gotoNextQuestion}>Next Question</button>
+        <button type="button" className="btn btn-danger" onClick={gotoNextQuestion}>Next Question</button>
       </div>
     </div>
   );

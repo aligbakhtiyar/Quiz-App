@@ -24,7 +24,7 @@ function QuizScreen({retry}) {
   }
 
   return (
-    <div className="container-sm">
+    <div className="quiz-screen">
     {  isQuestionEnd ? (
         <QuizResult 
           result ={calculateResult()}
