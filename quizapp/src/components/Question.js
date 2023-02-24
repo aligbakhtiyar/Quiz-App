@@ -26,8 +26,17 @@ function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
   }, [question]);
 
   return (
-    <div>
-      <div className="progress-bar" ref={progressBar}></div>
+    <div className="question">
+      <div className="progress">
+        <div
+          className="progress-bar progress-bar-striped bg-danger"
+          
+          style={{width:90}}
+          
+          ref={progressBar}>
+        </div>
+      </div>
+      
       <div className="question-count">
         <b>{currentQuestion}</b>
         of
@@ -36,13 +45,15 @@ function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
       <div className="main">
         <div className="title">
           <span>Question</span>
-          <p>{question.title}</p>  
+          <p>{question.title}</p>
         </div>
         <div className="options">
           {question.options.map((option, index) => {
             return (
               <div
-                className={index === selectedOption ? "option active" : "option"}
+                className={
+                  index === selectedOption ? "option active" : "option"
+                }
                 key={index}
                 onclick={() => setSelectedOption(index)}
               >
@@ -53,7 +64,7 @@ function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
         </div>
       </div>
       <div className="control">
-        <button onclick={gotoNextQuestion}>Next Question</button>
+        <button onClick={gotoNextQuestion}>Next Question</button>
       </div>
     </div>
   );
